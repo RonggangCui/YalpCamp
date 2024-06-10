@@ -10,7 +10,7 @@
     <ul>
         <% campgrounds.forEach(function(campground) { %>
             <li>
-                <%= campground.title %>
+                <a href="campgrounds/<%=campground._id %>" ><%= campground.title %></a>"
             </li>
         <% }); %>
 </body>

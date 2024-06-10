@@ -30,6 +30,10 @@ app.get('/campgrounds', async (req, res) => {
     res.render('campgrounds/index', {campgrounds});
 });
 
+app.get('/campgrounds/:id', async (req, res) => {
+    res.render('campgrounds/show');
+});
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
