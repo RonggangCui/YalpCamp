@@ -7,8 +7,7 @@
 
     // Loop over them and prevent submission
 
-    Array.from(forms)
-    .forEach(function (form) {
+    Array.from(forms).forEach(function (form) {
         form.addEventListener(
             "submit",
             function (event) {
