@@ -2,12 +2,9 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 }
 
-const express = require("express");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const { S3Client } = require("@aws-sdk/client-s3");
-
-const app = express();
 
 // Create a new S3 client instance
 const s3 = new S3Client({
