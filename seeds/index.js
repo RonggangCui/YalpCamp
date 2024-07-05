@@ -19,11 +19,14 @@ const seedDB = async () => {
         const camp = new Campground({
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)}, ${sample(places)}`,
-            image: "https://picsum.photos/400?random=${Math.random()}",
             author: "66864f0a598cd6074effdbd4",
             description:
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi iusto sunt vel laborum magnam dolor aperiam, impedit numquam hic pariatur ut incidunt perferendis ducimus sed qui ab quos, fugiat iste.",
             price: Math.floor(Math.random() * 20) + 10,
+            image: {
+                url: "https://yalpcamp-images.s3.ca-central-1.amazonaws.com/test.png",
+                filename: "test",
+            },
         });
         await camp.save();
     }
