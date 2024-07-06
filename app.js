@@ -14,6 +14,7 @@ const flash = require("connect-flash");
 const mongoSanitize = require("express-mongo-sanitize");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
+const MongoStore = require("connect-mongo");
 
 const userRoutes = require("./routes/users");
 const campgroundRoutes = require("./routes/campgrounds");
@@ -42,7 +43,20 @@ app.use(
     })
 );
 
+const store = MongoStore.create({
+    mongoUrl: mongoURI,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: "thisshouldbeabettersecret!",
+    },
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e);
+});
+
 const sessionConfig = {
+    store,
     secret: "thisshouldbeabettersecret!",
     resave: false,
     saveUninitialized: true,
