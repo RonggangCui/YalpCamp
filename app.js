@@ -11,6 +11,7 @@ const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const passport = require("passport");
 const flash = require("connect-flash");
+const mongoSanitize = require("express-mongo-sanitize");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 
@@ -23,16 +24,23 @@ app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-main().catch((err) => console.log(err));
+const mongoURI = process.env.MONGO_URI;
+//const mongoURI = "mongodb://127.0.0.1:27017/yelp-camp";
 
+main().catch((err) => console.log(err));
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/yelp-camp");
+    await mongoose.connect(mongoURI);
     console.log("Connected to the database");
 }
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+    mongoSanitize({
+        replaceWith: "_",
+    })
+);
 
 const sessionConfig = {
     secret: "thisshouldbeabettersecret!",
@@ -40,6 +48,7 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
+        // secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7,
     },
