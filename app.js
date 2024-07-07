@@ -25,30 +25,38 @@ app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-const mongoURI = process.env.MONGO_URI;
-//const mongoURI = "mongodb://127.0.0.1:27017/yelp-camp";
-
-main().catch((err) => console.log(err));
-async function main() {
-    await mongoose.connect(mongoURI);
-    console.log("Connected to the database");
+// Force HTTPS middleware
+function forceHttps(req, res, next) {
+    if (req.secure || req.headers["x-forwarded-proto"] === "https") {
+        return next();
+    }
+    res.redirect(`https://${req.hostname}${req.url}`);
 }
+
+// Apply HTTPS redirection middleware in production
+if (process.env.NODE_ENV === "production") {
+    app.use(forceHttps);
+}
+
+const mongoURI = process.env.NODE_ENV === "production" ? process.env.MONGO_URI : "mongodb://127.0.0.1:27017/yelp-camp";
+const port = process.env.PORT || (process.env.NODE_ENV === "production" ? 443 : 3000);
+
+mongoose
+    .connect(mongoURI)
+    .then(() => console.log("Connected to the database"))
+    .catch((err) => console.log("Database connection error:", err));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(
-    mongoSanitize({
-        replaceWith: "_",
-    })
-);
+app.use(mongoSanitize({ replaceWith: "_" }));
+
+const secret = process.env.SECRET || "thisshouldbeabettersecret";
 
 const store = MongoStore.create({
     mongoUrl: mongoURI,
     touchAfter: 24 * 60 * 60,
-    crypto: {
-        secret: "thisshouldbeabettersecret!",
-    },
+    crypto: { secret },
 });
 
 store.on("error", function (e) {
@@ -57,12 +65,12 @@ store.on("error", function (e) {
 
 const sessionConfig = {
     store,
-    secret: "thisshouldbeabettersecret!",
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        // secure: true,
+        secure: process.env.NODE_ENV === "production",
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7,
     },
@@ -103,7 +111,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Serving on port ${port}`);
 });
