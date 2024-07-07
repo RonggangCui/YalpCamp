@@ -25,8 +25,8 @@ app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-//const mongoURI = process.env.MONGO_URI;
-const mongoURI = "mongodb://127.0.0.1:27017/yelp-camp";
+const mongoURI = process.env.MONGO_URI;
+//const mongoURI = "mongodb://127.0.0.1:27017/yelp-camp";
 
 main().catch((err) => console.log(err));
 async function main() {
