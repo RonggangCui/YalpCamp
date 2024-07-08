@@ -24,21 +24,21 @@ The welcome page provides a brief introduction to the app and invites users to e
 On the All Campgrounds page, you can see a list of all the campgrounds without needing to log in. This page gives you a glimpse of what each campground offers, including images and brief descriptions.
 ![All Campgrounds](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_2.png)
 
-### 3. Login Page
+### 3. Viewing a Campground
+Without logging in, you can view all campgrounds on their detailed information pages, including a map showing the location and others' reviews of the campground.
+![Review a Campground](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_6.png)
+
+### 4. Login Page
 To post a new campground, you need to log in. Logging in will also unlock features like leaving reviews on any post and managing your posts if you are the owner.
 ![Login Page](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_3.png)
 
-### 4. Post a New Campground
+### 5. Post a New Campground
 After logging in, you can access the "Add New Campground" page. Here, you can fill in the details of your campground, including the title, location, price, and description. You can also upload an image for your campground.
 ![Post New Campground](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_4.png)
 
-### 5. Campground Details and Reviews
+### 6. Campground Details and Reviews
 Once a campground is added, users can view detailed information about it, leave reviews, and see its location on a map. If you are the owner of the campground, you can also edit or delete the post.
 ![Campground Details](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_5.png)
-
-### 6. Review a Campground
-Logged-in users can leave reviews on campgrounds, providing feedback and ratings based on their experiences.
-![Review a Campground](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_6.png)
 
 ## 🏗️ App Structure
 
