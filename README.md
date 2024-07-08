@@ -5,6 +5,7 @@ Welcome to the **Yelp Camp** repository! This repo is a product remake of the we
 ## 📑 Table of Contents
 - [Introduction](#introduction)
 - [Usage Demo](#usage-demo)
+- [Deployment Structure](#deployment-structure)
 - [App Structure](#app-structure)
 - [Package Usage](#package-usage)
 
@@ -39,6 +40,28 @@ After logging in, you can access the "Add New Campground" page. Here, you can fi
 ### 6. Campground Details and Reviews
 Once a campground is added, users can view detailed information about it, leave reviews, and see its location on a map. If you are the owner of the campground, you can also edit or delete the post.
 ![Campground Details](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_5.png)
+
+## 🛠️ Deployment Structure
+
+The deployment architecture for **Yelp Camp** follows a 3-tier structure, ensuring scalability, performance, and security. Below is the detailed analysis of each tier and the services used:
+
+![Deployment Structure](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/Deployment.png)
+
+### Presentation Tier
+- **Route 53**: Manages the domain name (www.yelp-camp-rc.com) and routes traffic to the appropriate resources.
+- **AWS Certificate Manager**: Provides SSL certificates for secure HTTPS connections.
+- **S3**: Used for storing static assets like images and other media files.
+
+### Application Tier
+- **Elastic Beanstalk**: Manages the deployment of the application using a containerized environment. It handles scaling and load balancing across multiple availability zones.
+- **VPC**: The application runs within a Virtual Private Cloud (VPC) for network isolation and security.
+- **Subnets**: The VPC is divided into public subnets for load balancers and private subnets for application instances.
+- **CloudWatch**: Used for monitoring application performance and logging.
+
+### Data Tier
+- **MongoDB Atlas**: A fully managed cloud database service used to store application data. It ensures high availability and scalability for the database.
+
+This architecture ensures that **Yelp Camp** remains highly available, scalable, and secure, providing a seamless experience for users.
 
 ## 🏗️ App Structure
 
