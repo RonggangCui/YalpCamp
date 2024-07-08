@@ -2,13 +2,6 @@
 
 Welcome to the **Yelp Camp** repository! This repo is a product remake of the web app I independently developed in summer 2022. I've updated many features and implemented a robust 3-tier deployment. Visit the app at [Yelp Camp](https://www.yelp-camp-rc.com/) and become an active user today! This guide will walk you through the project structure and the usage of each package.
 
-## 📑 Table of Contents
-- [Introduction](#introduction)
-- [Usage Demo](#usage-demo)
-- [Deployment Structure](#deployment-structure)
-- [App Structure](#app-structure)
-- [Package Usage](#package-usage)
-
 ## 🌟 Introduction
 
 **Yelp Camp** is a modern web application where outdoor enthusiasts can discover, share, and review campgrounds. Whether you're planning your next adventure or just browsing for inspiration, our platform offers a user-friendly interface and extensive features to make your experience seamless.
