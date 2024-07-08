@@ -1,6 +1,6 @@
 # 🏕️ Yelp Camp
 
-Welcome to the **Yelp Camp** repository! This repo is a product remake of the web app I independently developed in summer 2022. I've updated many features and implemented a robust 3-tier deployment. Visit the app at [Yelp Camp](https://www.yelp-camp-rc.com/) and become an active user today! This guide will walk you through the project structure and the usage of each package.
+Welcome to the **Yelp Camp** repository! This repo is a product remake of the web app I independently developed in summer 2022. I've updated many features and implemented a robust 3-tier deployment. Visit the app at [www.yelp-camp-rc.com](https://www.yelp-camp-rc.com/) and become an active user today! This guide will walk you through the project structure and the usage of each package.
 
 ## 🌟 Introduction
 
