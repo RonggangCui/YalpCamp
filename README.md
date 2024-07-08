@@ -1,6 +1,6 @@
-# Yelp Camp RC
+# Yelp Camp
 
-Welcome to the **Yelp Camp RC** repository! This repo is a product remake of the web app I developed in summer 2022. I've updated many features and implemented a robust 3-tier deployment. Visit the app at [Yelp Camp RC](https://www.yelp-camp-rc.com/) and become an active user today! This guide will walk you through the project structure and the usage of each package.
+Welcome to the **Yelp Camp** repository! This repo is a product remake of the web app I developed in summer 2022. I've updated many features and implemented a robust 3-tier deployment. Visit the app at [Yelp Camp](https://www.yelp-camp-rc.com/) and become an active user today! This guide will walk you through the project structure and the usage of each package.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -9,7 +9,9 @@ Welcome to the **Yelp Camp RC** repository! This repo is a product remake of the
 
 ## Introduction
 
-**Yelp Camp RC** is a modern web application where outdoor enthusiasts can discover, share, and review campgrounds. Whether you're planning your next adventure or just browsing for inspiration, our platform offers a user-friendly interface and extensive features to make your experience seamless.
+**Yelp Camp** is a modern web application where outdoor enthusiasts can discover, share, and review campgrounds. Whether you're planning your next adventure or just browsing for inspiration, our platform offers a user-friendly interface and extensive features to make your experience seamless.
+
+I developed a campground review application featuring user authentication, CRUD API endpoints for campground review management with Express.js and MongoDB. The dynamic UI, built with EJS and Bootstrap, ensures an intuitive and responsive user experience. Robust front-end and back-end data validation, integrated image upload functionality, and Google Maps APIs for location services make this application reliable and user-friendly. The app is deployed using a 3-tier architecture: S3 for asset storage, MongoDB Atlas for database management, and AWS Elastic Beanstalk for hosting, ensuring scalability and performance.
 
 ## App Structure
 
@@ -47,6 +49,3 @@ Key files include:
 - **morgan**: HTTP request logger middleware for Node.js, providing detailed request logs.
 - **body-parser**: Middleware to parse incoming request bodies in a middleware before your handlers, available under `req.body`.
 
----
-
-By following this README, you should have a clear understanding of how to get started with the project, how the application is structured, and how each package is used. Dive into the code, contribute, or simply enjoy using Yelp Camp RC. Feel free to reach out if you have any questions or need further assistance.
