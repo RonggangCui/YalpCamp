@@ -4,6 +4,7 @@ Welcome to the **Yelp Camp** repository! This repo is a product remake of the we
 
 ## 📑 Table of Contents
 - [Introduction](#introduction)
+- [Usage Demo](#usage-demo)
 - [App Structure](#app-structure)
 - [Package Usage](#package-usage)
 
@@ -12,6 +13,32 @@ Welcome to the **Yelp Camp** repository! This repo is a product remake of the we
 **Yelp Camp** is a modern web application where outdoor enthusiasts can discover, share, and review campgrounds. Whether you're planning your next adventure or just browsing for inspiration, our platform offers a user-friendly interface and extensive features to make your experience seamless.
 
 🚀 Developed a campground review application featuring user authentication, CRUD API endpoints for campground review management with Express.js and MongoDB. The dynamic UI, built with EJS and Bootstrap, ensures an intuitive and responsive user experience. Robust front-end and back-end data validation, integrated image upload functionality, and Google Maps APIs for location services make this application reliable and user-friendly. The app is deployed using a 3-tier architecture: S3 for asset storage, MongoDB Atlas for database management, and AWS Elastic Beanstalk for hosting, ensuring scalability and performance.
+
+## 📸 Usage Demo
+
+### 1. Welcome Page
+The welcome page provides a brief introduction to the app and invites users to explore the various campgrounds available. You can start your journey by clicking on the "View Campgrounds" button.
+![Welcome Page](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_1.png)
+
+### 2. All Campgrounds Page
+On the All Campgrounds page, you can see a list of all the campgrounds without needing to log in. This page gives you a glimpse of what each campground offers, including images and brief descriptions.
+![All Campgrounds](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_2.png)
+
+### 3. Login Page
+To post a new campground, you need to log in. Logging in will also unlock features like leaving reviews on any post and managing your posts if you are the owner.
+![Login Page](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_3.png)
+
+### 4. Post a New Campground
+After logging in, you can access the "Add New Campground" page. Here, you can fill in the details of your campground, including the title, location, price, and description. You can also upload an image for your campground.
+![Post New Campground](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_4.png)
+
+### 5. Campground Details and Reviews
+Once a campground is added, users can view detailed information about it, leave reviews, and see its location on a map. If you are the owner of the campground, you can also edit or delete the post.
+![Campground Details](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_5.png)
+
+### 6. Review a Campground
+Logged-in users can leave reviews on campgrounds, providing feedback and ratings based on their experiences.
+![Review a Campground](https://github.com/RonggangCui/YelpCamp/blob/main/readme_assets/guide_image_6.png)
 
 ## 🏗️ App Structure
 
@@ -52,5 +79,3 @@ Key files include:
 ---
 
 By following this README, you should have a clear understanding of how to get started with the project, how the application is structured, and how each package is used. Dive into the code, contribute, or simply enjoy using Yelp Camp. Feel free to reach out if you have any questions or need further assistance.
-
-
